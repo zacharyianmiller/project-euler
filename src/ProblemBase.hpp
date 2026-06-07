@@ -5,6 +5,7 @@
 #include <string>
 #include <chrono>
 #include <print>
+#include <any>
 
 // External includes
 #include <mldsp-utils/modules/math/mldsp_Math.hpp>
@@ -13,7 +14,7 @@ class ProblemBase
 {
 public:
 
-    ProblemBase(const int id, const std::string& title) : id(id), title(title) {}
+    ProblemBase(const int id, const std::string& title, std::any expectedValue) : id(id), title(title), expectedValue(expectedValue) {}
     virtual ~ProblemBase() = default;
 
     template <typename Derived>
@@ -27,6 +28,8 @@ protected:
 
     int getId() { return id; }
     std::string& getTitle() { return title; }
+    
+    std::any expectedValue;
 
 private:
 

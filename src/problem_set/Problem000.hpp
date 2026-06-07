@@ -11,10 +11,11 @@
 
 struct Problem000 : public ProblemBase
 {
-    // Solution
-    std::uint32_t ExpectedValue = 3179194264;
-
-    Problem000(const int id, const std::string& title) : ProblemBase(id, title) {}
+    Problem000(
+        const int id, 
+        const std::string& title, 
+        std::uint32_t expectedValue = 3179194264) : 
+    ProblemBase(id, title, expectedValue) {}
     
     bool run() override
     {
@@ -31,6 +32,6 @@ struct Problem000 : public ProblemBase
             ++value;
         }
 
-        return sum == ExpectedValue;
+        return sum == std::any_cast<std::uint32_t>(expectedValue);
     }
 };
