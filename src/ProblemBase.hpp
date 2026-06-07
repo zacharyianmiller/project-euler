@@ -42,7 +42,7 @@ private:
         auto end = std::chrono::system_clock::now();
         auto durationMs = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count() / 1e6;
         
-        const std::string& log = std::format("[Project Euler - #{}] Completed in {}ms", id, durationMs);
+        const std::string& log = std::format("[Project Euler - #{}] {} ({}ms)", id, result ? "PASSED" : "FAILED", durationMs);
         std::cout << log << std::endl;
     }
 
