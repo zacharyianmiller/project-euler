@@ -13,10 +13,6 @@ class ProblemBase
 {
 public:
 
-    // Solution
-    template<typename ExpectedValueType>
-    static ExpectedValueType ExpectedValue;
-
     ProblemBase(const int id, const std::string& title) : id(id), title(title) {}
     virtual ~ProblemBase() = default;
 
