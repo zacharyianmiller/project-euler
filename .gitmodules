@@ -1,0 +1,3 @@
+[submodule "libs/mldsp-utils"]
+	path = libs/mldsp-utils
+	url = git@github.com:zacharyianmiller/mldsp-utils.git
